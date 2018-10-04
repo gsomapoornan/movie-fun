@@ -1,5 +1,6 @@
 package org.superbiz.moviefun.albums;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -13,9 +14,9 @@ public class AlbumTest {
         persisted.setId(10);
 
         Album sameFromCsv = new Album("Radiohead", "OK Computer", 1997, 9);
-        assertThat(persisted.isEquivalent(sameFromCsv), is(true));
+        Assert.assertThat(persisted.isEquivalent(sameFromCsv), is(true));
 
         Album otherFromCsv = new Album("Radiohead", "Kid A", 2000, 9);
-        assertThat(persisted.isEquivalent(otherFromCsv), is(false));
+        Assert.assertThat(persisted.isEquivalent(otherFromCsv), is(false));
     }
 }
